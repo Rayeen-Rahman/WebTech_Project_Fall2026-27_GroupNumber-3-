@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Registration | Campus Event Board</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/registration.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="banner">
+            <img src="Image/Campus Event Board Banner.png" alt="Campus Event Board Banner">
+        </div>
+
+        <nav class="topnav">
+            <a href="login.html">Login</a>
+            <a href="registration.html" class="active">Registration</a>
+            <a href="review-event.html">Review Events</a>
+            <a href="add-event.html">Add Event</a>
+            <a href="add-user.html">Add User</a>
+            <a href="notice.html">Notice</a>
+        </nav>
+
+        <h2>Admin Registration</h2>
+
+        <form class="registration-form" onsubmit="return validateRegistration()" onreset="clearAllErrors()">
+
+            <fieldset>
+                <legend>Admin Information</legend>
+                <table>
+                    <tr>
+                        <td><label for="FullName">Full Name :</label></td>
+                        <td>
+                            <input type="text" id="FullName" placeholder="Enter Your Name">
+                            <p class="error" id="FullNameError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="AdminID">Admin ID :</label></td>
+                        <td>
+                            <input type="text" id="AdminID" placeholder="Example: ADM-1234">
+                            <p class="error" id="AdminIDError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Email">Email :</label></td>
+                        <td>
+                            <input type="text" id="Email" placeholder="Enter Your Email">
+                            <p class="error" id="EmailError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Phone">Phone :</label></td>
+                        <td>
+                            <input type="text" id="Phone" placeholder="01XXXXXXXXX">
+                            <p class="error" id="PhoneError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Gender :</label></td>
+                        <td>
+                            <label class="choice"><input type="radio" name="Gender" value="Male"> Male</label>
+                            <label class="choice"><input type="radio" name="Gender" value="Female"> Female</label>
+                            <label class="choice"><input type="radio" name="Gender" value="Other"> Other</label>
+                            <p class="error" id="GenderError"></p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>Admin Role & Permissions</legend>
+                <table>
+                    <tr>
+                        <td><label for="AdminRole">Admin Role :</label></td>
+                        <td>
+                            <select id="AdminRole">
+                                <option value="">Select Role</option>
+                                <option value="Main Admin">Main Admin</option>
+                                <option value="Event Admin">Event Admin</option>
+                                <option value="User Admin">User Admin</option>
+                            </select>
+                            <p class="error" id="AdminRoleError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Permissions :</label></td>
+                        <td>
+                            <label class="choice"><input type="checkbox" name="Permission" value="Manage Events"> Manage Events</label>
+                            <label class="choice"><input type="checkbox" name="Permission" value="Manage Users"> Manage Users</label>
+                            <label class="choice"><input type="checkbox" name="Permission" value="Manage Organizers"> Manage Organizers</label>
+                            <label class="choice"><input type="checkbox" name="Permission" value="View Reports"> View Reports</label>
+                            <p class="error" id="PermissionError"></p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>Account Information</legend>
+                <table>
+                    <tr>
+                        <td><label for="Username">Username :</label></td>
+                        <td>
+                            <input type="text" id="Username" placeholder="Enter Username">
+                            <p class="error" id="UsernameError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Password">Password :</label></td>
+                        <td>
+                            <input type="password" id="Password" placeholder="Enter Password">
+                            <p class="error" id="PasswordError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="ConfirmPassword">Confirm Password :</label></td>
+                        <td>
+                            <input type="password" id="ConfirmPassword" placeholder="Confirm Password">
+                            <p class="error" id="ConfirmPasswordError"></p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <p id="ResultText"></p>
+
+            <input type="submit" id="submit" value="Register">
+            <input type="reset" id="reset" value="Reset">
+
+        </form>
+
+        <footer>
+            <p>Campus Event Board | Admin Portal</p>
+        </footer>
+
+    </div>
+</body>
+</html>

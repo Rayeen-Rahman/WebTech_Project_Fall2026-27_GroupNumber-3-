@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Event | Campus Event Board</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/review-event.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="banner">
+            <img src="Image/Campus Event Board Banner.png" alt="Campus Event Board Banner">
+        </div>
+
+        <nav class="topnav">
+            <a href="login.html">Login</a>
+            <a href="registration.html">Registration</a>
+            <a href="review-event.html" class="active">Review Events</a>
+            <a href="add-event.html">Add Event</a>
+            <a href="add-user.html">Add User</a>
+            <a href="notice.html">Notice</a>
+        </nav>
+
+        <h2>Review Event</h2>
+
+        <form class="review-form" onsubmit="return validateReview()" onreset="clearAllErrors()">
+
+            <fieldset>
+                <legend>Event Information</legend>
+                <table>
+                    <tr>
+                        <td><label for="EventID">Event ID :</label></td>
+                        <td>
+                            <input type="text" id="EventID" placeholder="Example: EVT-1234">
+                            <p class="error" id="EventIDError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="EventTitle">Event Title :</label></td>
+                        <td>
+                            <input type="text" id="EventTitle" placeholder="Enter Event Title">
+                            <p class="error" id="EventTitleError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="OrganizerEmail">Organizer Email :</label></td>
+                        <td>
+                            <input type="text" id="OrganizerEmail" placeholder="Enter Organizer Email">
+                            <p class="error" id="OrganizerEmailError"></p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>Review Decision</legend>
+                <table>
+                    <tr>
+                        <td><label for="Decision">Decision :</label></td>
+                        <td>
+                            <select id="Decision" onchange="toggleReason()">
+                                <option value="">Select Decision</option>
+                                <option value="Approve">Approve</option>
+                                <option value="Reject">Reject</option>
+                            </select>
+                            <p class="error" id="DecisionError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Reason">Rejection Reason :</label></td>
+                        <td>
+                            <textarea id="Reason" rows="4" placeholder="Enter reason if rejected"></textarea>
+                            <p class="error" id="ReasonError"></p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <p id="ResultText"></p>
+
+            <input type="submit" id="submit" value="Submit Review">
+            <input type="reset" id="reset" value="Reset">
+
+        </form>
+
+        <footer>
+            <p>Campus Event Board | Admin Portal</p>
+        </footer>
+
+    </div>
+</body>
+</html>

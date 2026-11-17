@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event | Campus Event Board</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/add-event.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="banner">
+            <img src="Image/Campus Event Board Banner.png" alt="Campus Event Board Banner">
+        </div>
+
+        <nav class="topnav">
+            <a href="login.html">Login</a>
+            <a href="registration.html">Registration</a>
+            <a href="review-event.html">Review Events</a>
+            <a href="add-event.html" class="active">Add Event</a>
+            <a href="add-user.html">Add User</a>
+            <a href="notice.html">Notice</a>
+        </nav>
+
+        <h2>Add Event</h2>
+
+        <form class="add-event-form" onsubmit="return validateEvent()" onreset="clearAllErrors()">
+
+            <fieldset>
+                <legend>Event Information</legend>
+                <table>
+                    <tr>
+                        <td><label for="EventTitle">Event Title :</label></td>
+                        <td>
+                            <input type="text" id="EventTitle" placeholder="Enter Event Title">
+                            <p class="error" id="EventTitleError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="EventDate">Event Date :</label></td>
+                        <td>
+                            <input type="date" id="EventDate">
+                            <p class="error" id="EventDateError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="EventTime">Event Time :</label></td>
+                        <td>
+                            <input type="time" id="EventTime">
+                            <p class="error" id="EventTimeError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Venue">Venue :</label></td>
+                        <td>
+                            <input type="text" id="Venue" placeholder="Enter Event Venue">
+                            <p class="error" id="VenueError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Category">Category :</label></td>
+                        <td>
+                            <select id="Category">
+                                <option value="">Select Category</option>
+                                <option value="Workshop">Workshop</option>
+                                <option value="Seminar">Seminar</option>
+                                <option value="Competition">Competition</option>
+                                <option value="Cultural">Cultural</option>
+                                <option value="Sports">Sports</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <p class="error" id="CategoryError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="AvailableSeats">Available Seats :</label></td>
+                        <td>
+                            <input type="number" id="AvailableSeats" placeholder="Enter Number of Seats">
+                            <p class="error" id="AvailableSeatsError"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Description">Description :</label></td>
+                        <td>
+                            <textarea id="Description" rows="5" placeholder="Write Event Description"></textarea>
+                            <p class="error" id="DescriptionError"></p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <p id="ResultText"></p>
+
+            <input type="submit" id="submit" value="Add Event">
+            <input type="reset" id="reset" value="Reset">
+
+        </form>
+
+        <footer>
+            <p>Campus Event Board | Admin Portal</p>
+        </footer>
+
+    </div>
+</body>
+</html>

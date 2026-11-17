@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Campus Event Board</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/login.js" defer></script>
+</head>
+
+<body onload="makeCaptcha()">
+    <div class="container">
+        <div class="banner">
+            <img src="Image/Campus Event Board Banner.png" alt="Campus Event Board Banner">
+        </div>
+
+        <nav class="topnav">
+            <a href="login.html" class="active">Login</a>
+            <a href="registration.html">Registration</a>
+          
+            <a href="review-event.html">Review Events</a>
+            <a href="add-event.html">Add Event</a>
+            <a href="add-user.html">Add User</a>
+            <a href="notice.html">Notice</a>
+        </nav>
+
+
+    
+<h2>Admin Login</h2>
+
+        <form class="login-form" onsubmit="return validateAdminLogin()" onreset="clearAllErrors()">
+
+            <fieldset>
+                <legend>Admin Sign In</legend>
+
+                <table>
+                    <tr>
+                        <td>
+                            <label for="AdminID">Admin ID :</label>
+                        </td>
+                        <td>
+                            <input type="text" id="AdminID" placeholder="Example: ADM-1234">
+                            <p class="error" id="AdminIDError"></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="Password">Password :</label>
+                        </td>
+                        <td>
+                            <input type="password" id="Password" placeholder="Enter Your Password">
+
+                            <label class="choice">
+                                <input type="checkbox" onclick="togglePassword()">
+                                Show Password
+                            </label>
+
+                            <p class="error" id="PasswordError"></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Security Check :</label>
+                        </td>
+                        <td>
+                            <p id="CaptchaQuestion"></p>
+
+                            <input type="number" id="Captcha" placeholder="Enter Your Answer">
+
+                            <button type="button" class="refresh-btn" onclick="makeCaptcha()">
+                                New Question
+                            </button>
+
+                            <p class="error" id="CaptchaError"></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <label class="choice">
+                                <input type="checkbox" id="Remember">
+                                Remember Me
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+
+            </fieldset>
+
+            <p id="ResultText"></p>
+
+            <div class="button-area">
+                <input type="submit" id="submit" value="Login">
+                <input type="reset" id="reset" value="Reset">
+            </div>
+
+            <p class="register-link">
+                New Admin? <a href="registration.html">Register Here</a>
+            </p>
+
+        </form>
+
+        <footer>
+            <p>Campus Event Board | Admin Portal</p>
+        </footer>
+
+
+    </div>
+</body>
+</html>
